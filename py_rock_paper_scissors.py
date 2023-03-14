@@ -6,6 +6,7 @@ Usporedimo izbore i ovisno o izboru prikazemo rezultat
 
 '''
 import random
+import os
 
 
 pieces = { 1: 'kamen',
@@ -16,6 +17,7 @@ pieces = { 1: 'kamen',
 #computer_choice = random.choice(pieces)
 
 while True:
+    os.system('cls')
     computer_choice = random.randint(1,3)
     #print(computer_choice)
     print()
