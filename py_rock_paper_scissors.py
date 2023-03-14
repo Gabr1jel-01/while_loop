@@ -14,16 +14,14 @@ pieces = { 1: 'kamen',
            3: 'papir'
 }
 
-#computer_choice = random.choice(pieces)
-
 while True:
     os.system('cls')
     computer_choice = random.randint(1,3)
-    #print(computer_choice)
     print()
     
     for key, value in pieces.items():
         print(f'{key}. {value}')
+    print()
     
     user_choice = input('Izaberite jedan broj iz izbornika : ')
     while not user_choice.isnumeric():
@@ -36,7 +34,7 @@ while True:
         print('Unesite jedan od brojeva iz izbornika!')
         user_choice = int(input('Pokusajte unijeti ispravan broj iz izbornika '))
         
-
+    #region Check game status
     if computer_choice == user_choice:
         print(f'Nerijeseno  - Vas izbor {pieces[user_choice]} je isti kao {pieces[computer_choice]}')
     elif computer_choice == 1 and user_choice == 2:
@@ -52,9 +50,12 @@ while True:
     elif computer_choice == 3 and user_choice == 2:
         print(f'Pobijedili ste  - Vas izbor {pieces[user_choice]} pobjeduje {pieces[computer_choice]}')
         
+    #endregion
+    
+    
     next_round = input('Zelite li ponoviti igru? (Da/Ne)')
-    if next_round[ : 2].lower == 'da':
+    if next_round[ : 2].lower() != 'da':
         break
+    
 
-
-# Pozdravna poruka 
+# Pozdravna poruka 2
